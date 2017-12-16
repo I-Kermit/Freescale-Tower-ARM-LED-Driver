@@ -62,7 +62,7 @@ typedef enum
 }
 gpioNo_t;
 
-#define MAX_GPIO (31)
+#define MAX_GPIO (GPIO_31)
 
 typedef struct gpioInit
 {

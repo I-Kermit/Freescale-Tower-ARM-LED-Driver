@@ -98,7 +98,7 @@ int main(void)
 			{
 				BLUE_LED_PORT_A_10,
 			},
-			1
+			GPIO_1
 		};
 
 		freescale_m4_led_driver.ledInit(&ledInit);
