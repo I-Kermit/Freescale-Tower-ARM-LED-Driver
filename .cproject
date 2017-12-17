@@ -17,8 +17,9 @@
 						<toolChain id="com.atollic.truestudio.exe.debug.toolchain.755313384" name="Atollic ARM Tools" superClass="com.atollic.truestudio.exe.debug.toolchain">
 							<option id="com.atollic.truestudio.toolchain_options.mcu.553764644" name="Microcontroller" superClass="com.atollic.truestudio.toolchain_options.mcu" useByScannerDiscovery="false" value="MK60DN512xxx10" valueType="string"/>
 							<option id="com.atollic.truestudio.toolchain_options.vendor.1337442282" name="Vendor name" superClass="com.atollic.truestudio.toolchain_options.vendor" useByScannerDiscovery="false" value="Freescale" valueType="string"/>
+							<option id="com.atollic.truestudio.general.runtimelib.1985394432" name="Runtime Library" superClass="com.atollic.truestudio.general.runtimelib" value="com.atollic.truestudio.ld.general.clib.small" valueType="enumerated"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.debug.toolchain.platform.32373171" isAbstract="false" name="Debug platform" osList="all" superClass="com.atollic.truestudio.exe.debug.toolchain.platform"/>
-							<builder buildPath="${workspace_loc:/HAL_LedDriver4}/Debug" customBuilderProperties="toolChainpathString=C:\\Program Files (x86)\\Atollic\\TrueSTUDIO for ARM 7.1.1\\ARMTools\\bin|toolChainpathType=1|com.atollic.truestudio.common_options.target.vendor=Freescale|com.atollic.truestudio.common_options.target.mcu=MK60DN512xxx10|" id="com.atollic.truestudio.mbs.builder1.219951906" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
+							<builder buildPath="${workspace_loc:/HAL_LedDriver4}/Debug" customBuilderProperties="toolChainpathString=C:\\Program Files (x86)\\Atollic\\TrueSTUDIO for ARM 8.1.0\\ARMTools\\bin|toolChainpathType=1|com.atollic.truestudio.common_options.target.vendor=Freescale|com.atollic.truestudio.common_options.target.mcu=MK60DN512xxx10|" id="com.atollic.truestudio.mbs.builder1.219951906" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
 							<tool id="com.atollic.truestudio.exe.debug.toolchain.as.1746281308" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as">
 								<option id="com.atollic.truestudio.common_options.target.endianess.1754590633" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess" useByScannerDiscovery="false"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.925711835" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" useByScannerDiscovery="false" value="MK60DN512xxx10" valueType="enumerated"/>
@@ -132,8 +133,9 @@
 						<toolChain id="com.atollic.truestudio.exe.release.toolchain.1261567799" name="Atollic ARM Tools" superClass="com.atollic.truestudio.exe.release.toolchain">
 							<option id="com.atollic.truestudio.toolchain_options.mcu.629387247" name="Microcontroller" superClass="com.atollic.truestudio.toolchain_options.mcu" value="MK60DN512xxx10" valueType="string"/>
 							<option id="com.atollic.truestudio.toolchain_options.vendor.227548578" name="Vendor name" superClass="com.atollic.truestudio.toolchain_options.vendor" value="Freescale" valueType="string"/>
+							<option id="com.atollic.truestudio.general.runtimelib.1529696228" name="Runtime Library" superClass="com.atollic.truestudio.general.runtimelib" value="com.atollic.truestudio.ld.general.clib.small" valueType="enumerated"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.release.toolchain.platform.596882880" isAbstract="false" name="release platform" superClass="com.atollic.truestudio.exe.release.toolchain.platform"/>
-							<builder buildPath="${workspace_loc:/HAL_LedDriver4}/Release" customBuilderProperties="com.atollic.truestudio.common_options.target.vendor=Freescale|com.atollic.truestudio.common_options.target.mcu=MK60DN512xxx10|" id="com.atollic.truestudio.mbs.builder1.2028123782" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
+							<builder buildPath="${workspace_loc:/HAL_LedDriver4}/Release" customBuilderProperties="toolChainpathString=C:\\Program Files (x86)\\Atollic\\TrueSTUDIO for ARM 8.1.0\\ARMTools\\bin|toolChainpathType=1|com.atollic.truestudio.common_options.target.vendor=Freescale|com.atollic.truestudio.common_options.target.mcu=MK60DN512xxx10|" id="com.atollic.truestudio.mbs.builder1.2028123782" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
 							<tool id="com.atollic.truestudio.exe.release.toolchain.as.1589138369" name="Assembler" superClass="com.atollic.truestudio.exe.release.toolchain.as">
 								<option id="com.atollic.truestudio.common_options.target.endianess.2112523645" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1179580605" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="MK60DN512xxx10" valueType="enumerated"/>
@@ -239,6 +241,13 @@
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/HAL_LedDriver4"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/HAL_LedDriver4"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>
