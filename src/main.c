@@ -30,12 +30,6 @@ SOFTWARE.
 #include <stdlib.h>
 
 #include "mcu.h"
-
-#include "Interface/IF_Gpio.h"
-#include "Drivers/DVR_Led.h"
-#include "HAL/HAL_Gpio.h"
-#include "Interrupts/SysTick/INT_SysTick.h"
-
 #include "drivers.h"
 #include "helper.h"
 
