@@ -33,26 +33,29 @@ SOFTWARE.
 #include "drivers.h"
 #include "helper.h"
 
-static void LedDemo(void){
-
-    #define NUMBER_OF_LEDS (4)
+static void InitialiseDriver(void)
+{
+	#define NUMBER_OF_LEDS (4)
 
 	gpioInit_t ledInit =
 	{
 		SIM_SCGC5_PORTA_MASK,
 		{
 			BLUE_LED_PORT_A_10,
-		    ORANGE_LED_PORT_A_11,
-		    YELLOW_LED_PORT_A_28,
-		    GREEN_LED_PORT_A_29
+			ORANGE_LED_PORT_A_11,
+			YELLOW_LED_PORT_A_28,
+			GREEN_LED_PORT_A_29
 		},
 		NUMBER_OF_LEDS
 	};
 
+	freescale_m4_led_driver.ledInit(&ledInit);
+}
+
+static void LedDemo(void)
+{
 	uint32_t ledPattern[] = {BLUE_LED,GREEN_LED,YELLOW_LED,ORANGE_LED};
 	uint32_t led;
-
-	freescale_m4_led_driver.ledInit(&ledInit);
 
 	for(led=0;led<sizeof(ledPattern)/sizeof(ledPattern[0]);led++)
 	{
@@ -65,15 +68,27 @@ static void LedDemo(void){
 
 void InterruptLedDemo(void)
 {
+	static uint32_t ledPattern[] = {BLUE_LED,GREEN_LED,YELLOW_LED,ORANGE_LED};
 	static uint32_t state = 0;
+	static uint32_t whichLed = 0;
 
-	if(state)
+	if(!state)
 	{
-		freescale_m4_led_driver.ledOn(BLUE_LED);
+		freescale_m4_led_driver.ledOn(ledPattern[whichLed]);
 	}
 	else
 	{
-		freescale_m4_led_driver.ledOff(BLUE_LED);
+		freescale_m4_led_driver.ledOff(ledPattern[whichLed]);
+	}
+
+	if(state)
+	{
+		whichLed++;
+
+		if(whichLed>3)
+		{
+			whichLed = 0;
+		}
 	}
 
 	state = !state;
@@ -81,22 +96,9 @@ void InterruptLedDemo(void)
 
 int main(void)
 {
+	InitialiseDriver();
 	/* Polled demonstration */
 	LedDemo();
-
-	/* interrupt demonstration */
-	{
-		gpioInit_t ledInit =
-		{
-			SIM_SCGC5_PORTA_MASK,
-			{
-				BLUE_LED_PORT_A_10,
-			},
-			GPIO_1
-		};
-
-		freescale_m4_led_driver.ledInit(&ledInit);
-	}
 
 	freescale_m4_timer_driver.dvr_SysTickFunction(&InterruptLedDemo);
 	freescale_m4_timer_driver.dvr_SysTickInit();
